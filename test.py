@@ -19,24 +19,23 @@
 #     print(response)
 # print(type(response.json()))
 
-# list comprehension
 
 import requests
 import json
 import geopy.distance
 
-restaurant_data = None
+# restaurant_data = None
 
 with open('restaurants.json') as json_file:
     restaurant_data = json.load(json_file)
 
-# name, description and tags
+# placeholder query variables.
 query_coords = (24.9695, 60.1775)
-query_name = "Happy Waffle Helsinki"
-query_description = "Tuoretta ja herkullista ruokaa"
-query_tags = "pizza"
+query = "burg"
 
 # Expression for item in list
+
+# function to check if location is sub 3km from the restaurant.
 
 
 def check_distance(q_coords, location):
@@ -49,26 +48,27 @@ def check_distance(q_coords, location):
 # Check if location is within 3km radius of the query_location.
 result = [item for item in restaurant_data['restaurants'] if check_distance(query_coords, item['location'])]
 
-# Find out if query matches: name, description and tags
+# creating new list for returned strings.
+return_data_list = []
+
+# Find out if query matches: name, description or tags
 for restaurant in result:
-    if restaurant['tags'][0] == query_tags:
-        print(restaurant['name'])
-    elif restaurant['tags'][1] == query_tags:
-        print(restaurant['name'])
+    if query in restaurant['tags'][0]:
+        return_data_list.append(restaurant['name'])
+    if query in restaurant['tags'][1]:
+        return_data_list.append(restaurant['name'])
+    if query in restaurant['name']:
+        return_data_list.append(restaurant['name'])
+    if query in restaurant['description']:
+        return_data_list.append(restaurant['name'])
 
-# print(restaurant['name'])
+#remove duplicates from the list
+return_data_list = list(dict.fromkeys(return_data_list))
+print(return_data_list)
 
+#sort list alphabetically
+return_data_list.sort()
+print(return_data_list)
 
-# for item in restaurant_data['restaurants']:
-#     # if check_distance(query_coords, item['location']):
-#     #     print(item['name'])
-#     if check_distance(query_coords, item['location']) and item['name'] == query_name:
-#         print(item['name'])
-#     if check_distance(query_coords, item['location']) and item['description'] == query_description:
-#         print(item['name'])
-#     if check_distance(query_coords, item['location']) and item['tags'] == query_tags:
-#         print(item['name'])
-
-
-
-
+with open('results.json', 'w') as result_file:
+    json.dump(return_data_list, result_file)
