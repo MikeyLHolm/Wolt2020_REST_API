@@ -15,3 +15,6 @@ Example query:
 This search would return restaurants (in JSON format) which contain a word sushi and are closer than 3km to the point [60.17045, 24.93147].
 
 Please do not use any on-disk database (MySQL, PostgreSQL, ...) or ElasticSearch in this assignment. The task can be completed without them.
+
+https://jobs.lever.co/wolt/7d18a18f-1a28-48a6-ab69-a17327466675
+https://github.com/woltapp/summer2020
