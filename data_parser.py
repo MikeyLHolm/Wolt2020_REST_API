@@ -22,40 +22,45 @@
 import json
 import geopy.distance
 
+# COMMENTS:
+# add case sensitivity to Name and description!!
+# ideally i would try to do do everything in one simple loop using list comprehension. If that is possible.
 
-# restaurant_data = None
+
 def query(q, lat, lon):
     with open('restaurants.json') as json_file:
         restaurant_data = json.load(json_file)
-
     q_coords = (lat, lon)
+    print("Query =", q)
+    print("Query coordinates", q_coords)
     # Check if location is within 3km radius of the query_location.
-    r = [item for item in restaurant_data['restaurants'] if check_distance(q_coords, item['location'])]
+    r = [item for item in restaurant_data['restaurants'] if check_distance(q_coords, item['location']) is True]
 
     # return_data_list = []
-    print(len(r), "\n")
-
     # Find out if query matches: name, description or tags
-    # probably should change 'tags' to iterating thru list instead fixed 0 & 1.
     for restaurant in r:
-        if any(item for item in restaurant['tags'] if q in item):
+        sw = 0
+        # print(restaurant['description'])
+        # print(type(restaurant['description']))
+        # print(q)
+        # print(type(q))
+        # print(check_tags(q, restaurant['tags']) is True)
+        # print(restaurant['name'])
+        if restaurant['description'].find(q) != -1:
+            print("test2", restaurant['name'])
+            sw = 1
+        if restaurant['name'].find(q) != -1:
+            print("test1", restaurant['name'])
+            sw = 1
+        # elif restaurant['description'].find(q) != -1:
+        #     print("test2")
+        if check_tags(q, restaurant['tags']) is True:
             print("q found at " + restaurant['name'])
-            continue
-        # elif q in restaurant['tags'][1]:
-        #     return_data_list.append(restaurant['name'])
-        elif q in restaurant['name']:
-            print("test1")
-            continue
-            # return_data_list.append(restaurant['name'])
-        elif q in restaurant['description']:
-            print("test2")
-            continue
-            # return_data_list.append(restaurant['name'])
-        else:
+            sw = 1
+        if sw == 0:
             print("Deleting " + restaurant['name'])
-            r.remove(restaurant)
-    print(len(r), "\n")
-    print(r)
+            del restaurant
+        print(r)
 
     # remove duplicates from the list
     # return_data_list = list(dict.fromkeys(return_data_list))
@@ -67,18 +72,26 @@ def query(q, lat, lon):
 
     with open('results.json', 'w') as f:
         json.dump(r, f, indent=2)
+    print("Results printed to results.json")
 
 
-# placeholder query variables.
-# query_c = (24.9695, 60.1775)
-# q_input = "burg"
-
-# Expression for item in list
+# function that returns 1 if q can be found from tags.
+def check_tags(q, tags):
+    for i in tags:
+        if i.find(q) != -1:
+            return True
+    return False
 
 
 # function to check if location is sub 3km from the restaurant.
 def check_distance(q_coords, location):
     if geopy.distance.distance(q_coords, location).km < 3:
-        return 1
+        return True
     else:
-        return 0
+        return False
+
+
+q = "izz"
+lat = 24.9695
+lon = 60.1775
+query(q, lat, lon)
