@@ -23,12 +23,12 @@ https://github.com/woltapp/summer2020
 ## How to use?
 
 ##### Required libraries:
-*json
-*geopy
-*os
-*flask
-*jsonify
-*request
+  json
+  geopy
+  os
+  flask
+  jsonify
+  request
 
  
  curl http://127.0.0.1:5000/
