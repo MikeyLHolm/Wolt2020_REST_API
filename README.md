@@ -22,7 +22,8 @@ https://github.com/woltapp/summer2020
 
 ## How to use?
 
-This API requires [Python3](https://realpython.com/installing-python/)
+This API requires [Python3](https://realpython.com/installing-python/) to use.
+```https://github.com/MikeyLHolm/Wolt_backend_pre_assignment.git```
 
 ### Required libraries:
 
