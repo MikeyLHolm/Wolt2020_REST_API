@@ -48,15 +48,17 @@ To install a library: pip3 install libraryname
 
 Add following code to *line 22* in rest_api.py:
 
-```try:
-       os.remove('results.json')
-   except OSError:
-       pass
+```
+try:
+    os.remove('results.json')
+except OSError:
+    pass
 ```
 and following code to *line 31* in data_parser.py
 
-```with open('results.json', 'w') as f:
-       json.dump(ret, f, indent=2)
+```
+with open('results.json', 'w') as f:
+    json.dump(ret, f, indent=2)
 ```
 
 
