@@ -22,6 +22,9 @@ https://github.com/woltapp/summer2020
 
 ## My solution
 
+Using Flask with Python I can create a development server to run the queries at.
+One larger function (query_filter) passed into list comprehension as a condition filters query-matching restaurants into a new list which is returned as a file and as JSONified value to the web adddress
+
 ## How to use?
 
 This API requires [Python3](https://realpython.com/installing-python/) to use.
@@ -31,6 +34,13 @@ This API requires [Python3](https://realpython.com/installing-python/) to use.
 
 ### Open up a new prompt to test out the API using curl.
 ```curl http://127.0.0.1:5000/```
+
+### How to search?
+
+http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775
+q=
+lat=
+lon=
 
 ### Required libraries:
 
@@ -57,4 +67,5 @@ Zell Liew @ www.smashingmagazine.com
 ## Links:
 
 [Understanding And Using REST APIs](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
+
 [What is REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
