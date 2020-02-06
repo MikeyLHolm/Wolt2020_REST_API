@@ -22,9 +22,11 @@ https://github.com/woltapp/summer2020
 
 ## How to use?
 
+This API requires [Python3](https://realpython.com/installing-python/)
+
 ### Required libraries:
 
-To install: pip3 install <library>
+To install a library: pip3 install libraryname
 * flask
 * geopy
 * json
