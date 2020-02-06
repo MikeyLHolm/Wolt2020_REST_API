@@ -2,14 +2,16 @@
 A REST API endpoint that allows searching restaurants.
 Originally done for [Wolt's](https://wolt.com/) Summer 2020 Internship Engineering Backend Pre-assignment.
 
-API needs to accept three parameters and should return restaurant(s) (objects) which match the given query string and are closer than 3 kilometers from coordinates.
+API needs to accept three parameters (query string, latitude and longitude) and should return restaurant(s) (objects) which match the given query string and are closer than 3 kilometers from coordinates.
 
 https://github.com/woltapp/summer2020
 
 ## My solution
 
-Using Flask with Python I can create a development server to run the queries at.
-One larger function (query_filter) passed into list comprehension as a condition filters query-matching restaurants into a new list which is returned as a file and as JSONified value to the web adddress
+* I chose **Python** as I'm interested in *Machine learning* and *all things AI* where Python is greatly used and I had already planned on learning the language. 
+* Using Flask with Python I can create a development server to run the queries at.
+* One larger function (query_filter) passed into list comprehension as a condition filters query-matching restaurants into a new list which is returned as a file and as JSONified value to the web adddress
+* Try to improve user xp with various error messages and instructions.
 
 ## How to use?
 
