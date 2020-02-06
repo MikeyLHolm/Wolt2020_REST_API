@@ -44,6 +44,22 @@ To install a library: pip3 install libraryname
 * os
 * request
 
+### Want to get your results into a .json file?
+
+Add following code to *line 22* in rest_api.py:
+
+```try:
+       os.remove('results.json')
+   except OSError:
+       pass
+```
+and following code to *line 31* in data_parser.py
+
+```with open('results.json', 'w') as f:
+       json.dump(ret, f, indent=2)
+```
+
+
 ## What is REST API?
 
 >Let’s say you’re trying to find videos about Batman on Youtube. You open up Youtube, type “Batman” into a search field, hit enter, and you see a list of videos about Batman. A REST API works in a similar way. You search for something, and you get a list of results back from the service you’re requesting from.
