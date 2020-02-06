@@ -33,77 +33,32 @@ def query(q, lat, lon):
     q_coords = (lat, lon)
     print("Query =", q)
     print("Query coordinates", q_coords)
-    # Check if location is within 3km radius of the query_location.
-    # r = [item for item in restaurant_data['restaurants'] if check_distance(q_coords, item['location']) is True]
-    # return_data_list = []
-    # Find out if query matches: name, description or tags
-    # for restaurant in r:
-    #     sw = 0
-    #     # print(restaurant['description'])
-    #     # print(type(restaurant['description']))
-    #     # print(q)
-    #     # print(type(q))
-    #     # print(check_tags(q, restaurant['tags']) is True)
-    #     # print(restaurant['name'])
-    #     if restaurant['description'].find(q) != -1:
-    #         print("test2", restaurant['name'])
-    #         sw = 1
-    #     if restaurant['name'].find(q) != -1:
-    #         print("test1", restaurant['name'])
-    #         sw = 1
-    #     # elif restaurant['description'].find(q) != -1:
-    #     #     print("test2")
-    #     if check_tags(q, restaurant['tags']) is True:
-    #         print("q found at " + restaurant['name'])
-    #         sw = 1
-    #     if sw == 0:
-    #         print("Deleting " + restaurant['name'])
-    #         del restaurant
-    #     print(r)
-    #
-    # # remove duplicates from the list
-    # # return_data_list = list(dict.fromkeys(return_data_list))
-    # # print(return_data_list)
-    #
-    # # sort list alphabetically
-    # # return_data_list.sort()
-    # # print(return_data_list)
-    for restaurant in restaurant_data['restaurants']:
-        if check_distance(q_coords, restaurant['location']) is False:
-            del restaurant_data
-        elif parse_fields(q, restaurant) is False:
-            del restaurant_data
-        #         print("test2", restaurant['name'])
-        #         sw = 1
-        #     if restaurant['name'].find(q) != -1:
-        #         print("test1", restaurant['name'])
-        #         sw = 1
-        #     # elif restaurant['description'].find(q) != -1:
-        #     #     print("test2")
-        #     if check_tags(q, restaurant['tags']) is True:
-        #         print("q found at " + restaurant['name'])
-        #         sw = 1
-        #     if sw == 0:
-        #         print("Deleting " + restaurant['name'])
-        #         del restaurant
+
+    ret = [item for item in restaurant_data['restaurants'] if query_filter(q, q_coords, item) is True]
+
+
     with open('results.json', 'w') as f:
-        json.dump(restaurant_data, f, indent=2)
+        json.dump(ret, f, indent=2)
     print("Results printed to results.json")
 
+    return ret
 
-# Comparing query to the restaurant_data in json file.
-def parse_fields(query, restaurant):
+# Main function to parse thru the json data with search values
+def query_filter(query, q_coords, restaurant):
     sw = 0
+    dist = 0
+    if check_distance(q_coords, restaurant['location']) is True:
+        dist = 1
     if restaurant['description'].find(query) != -1:
         sw = 1
     if restaurant['name'].find(query) != -1:
         sw = 1
     if check_tags(query, restaurant['tags']) is True:
         sw = 1
-    if sw == 0:
-        return False
-    else:
+    if sw == 1 and dist == 1:
         return True
+    else:
+        return False
 
 
 # function that returns 1 if q can be found from tags.
@@ -114,7 +69,7 @@ def check_tags(q, tags):
     return False
 
 
-# function to check if location is sub 3km from the restaurant.
+# Check if location is within 3km radius of the query_location.
 def check_distance(q_coords, location):
     if geopy.distance.distance(q_coords, location).km < 3:
         return True
@@ -122,7 +77,7 @@ def check_distance(q_coords, location):
         return False
 
 
-q = "izz"
-lat = 24.9695
-lon = 60.1775
-query(q, lat, lon)
+# q = "izz"
+# lat = 24.9695
+# lon = 60.1775
+# query(q, lat, lon)
