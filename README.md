@@ -7,7 +7,7 @@ Create a REST API endpoint that allows searching restaurants. API needs to accep
 q: query string. Full or partial match for the string is searched from name, description and tags fields. A minimum length for the query string is one character.
 lat: latitude coordinate (customer's location)
 lon : longitude coordinate (customer's location)
-API should return restaurant (objects) which match the given query string and are closer than 3 kilometers from coordinates.
+**API should return restaurant (objects) which match the given query string and are closer than 3 kilometers from coordinates.**
 
 Example query:
 
@@ -38,11 +38,12 @@ This API requires [Python3](https://realpython.com/installing-python/) to use.
 ### How to search?
 
 Typical search would look something like:
+
 ```http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775```
-Where
-* q=
-* lat=
-* lon=
+
+* q: query string. Full or partial match for the string is searched from name, description and tags fields. A minimum length for the query string is one character.
+* lat: latitude coordinate
+* lon: longitude coordinate
 
 ### Required libraries:
 
