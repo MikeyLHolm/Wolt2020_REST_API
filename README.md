@@ -4,6 +4,7 @@ Originally done for [Wolt's](https://wolt.com/) Summer 2020 Internship Engineeri
 
 API needs to accept three parameters (query string, latitude and longitude) and should return restaurant(s) (objects) which match the given query string and are closer than 3 kilometers from coordinates.
 
+Detailed instructions:
 https://github.com/woltapp/summer2020
 
 ## My solution
