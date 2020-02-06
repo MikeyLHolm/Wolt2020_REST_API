@@ -61,6 +61,9 @@ with open('results.json', 'w') as f:
     json.dump(ret, f, indent=2)
 ```
 
+Your code should look something like:
+![rest_api](/images/line22.png)
+![data_parser](/images/line31.png)
 
 ## What is REST API?
 
