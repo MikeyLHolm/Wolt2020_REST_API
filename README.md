@@ -41,10 +41,11 @@ To install a library: pip3 install libraryname
 * geopy
 * json
 * jsonify
-* os
 * request
 
 ### Want to get your results into a .json file?
+
+For checking if file already exists, you need to install *os*-library.
 
 Add following code to *line 22* in rest_api.py (this will delete results.json from repo root if you have one already):
 
