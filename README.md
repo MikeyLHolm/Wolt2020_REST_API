@@ -10,8 +10,8 @@ https://github.com/woltapp/summer2020
 
 * I chose **Python** as I'm interested in *Machine learning* and *all things AI* where Python is greatly used and I had already planned on learning the language. 
 * Using Flask with Python I can create a development server to run the queries at.
-* One larger function (query_filter) passed into list comprehension as a condition filters query-matching restaurants into a new list which is returned as a file and as JSONified value to the web adddress
-* Try to improve user xp with various error messages and instructions.
+* One larger function (query_filter) passed into list comprehension as a condition filters query-matching restaurants into a new list which is returned as a file in repo root and as a .json type list to the web address.
+* Trying to improve user xp with various error messages and instructions.
 
 ## How to use?
 
@@ -60,3 +60,5 @@ Zell Liew @ www.smashingmagazine.com
 [Understanding And Using REST APIs](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
 
 [What is REST](https://en.wikipedia.org/wiki/Representational_state_transfer)
+
+[My Linkedin](https://www.linkedin.com/in/mlindholm3)
