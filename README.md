@@ -46,7 +46,7 @@ To install a library: pip3 install libraryname
 
 ### Want to get your results into a .json file?
 
-Add following code to *line 22* in rest_api.py:
+Add following code to *line 22* in rest_api.py (this will delete results.json from repo root if you have one already):
 
 ```
 try:
@@ -54,7 +54,7 @@ try:
 except OSError:
     pass
 ```
-and following code to *line 31* in data_parser.py
+and following code to *line 31* in data_parser.py (creates results.json and copies the return data into the file):
 
 ```
 with open('results.json', 'w') as f:
