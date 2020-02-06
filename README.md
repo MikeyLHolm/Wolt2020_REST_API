@@ -19,3 +19,16 @@ Please do not use any on-disk database (MySQL, PostgreSQL, ...) or ElasticSearch
 https://jobs.lever.co/wolt/7d18a18f-1a28-48a6-ab69-a17327466675
 
 https://github.com/woltapp/summer2020
+
+## How to use?
+
+##### Required libraries:
+*json
+*geopy
+*os
+*flask
+*jsonify
+*request
+
+ 
+ curl http://127.0.0.1:5000/
