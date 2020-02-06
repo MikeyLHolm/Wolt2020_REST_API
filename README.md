@@ -41,12 +41,13 @@ To install a library: pip3 install libraryname
 * geopy
 * json
 * jsonify
-* os
 * request
 
 ### Want to get your results into a .json file?
 
-Add following code to *line 22* in rest_api.py:
+For checking if file already exists, you need to install *os*-library.
+
+Add following code to *line 22* in rest_api.py (this will delete results.json from repo root if you have one already):
 
 ```
 try:
@@ -54,13 +55,16 @@ try:
 except OSError:
     pass
 ```
-and following code to *line 31* in data_parser.py
+and following code to *line 31* in data_parser.py (creates results.json and copies the return data into the file):
 
 ```
 with open('results.json', 'w') as f:
     json.dump(ret, f, indent=2)
 ```
 
+Your code should look something like:
+![rest_api](/images/line22.png)
+![data_parser](/images/line31.png)
 
 ## What is REST API?
 
