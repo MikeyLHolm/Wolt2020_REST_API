@@ -28,7 +28,7 @@ This API requires [Python3](https://realpython.com/installing-python/) to use.
 ```git clone https://github.com/MikeyLHolm/Wolt2020_REST_API.git```
 
 ### Open up a new prompt to test out your API using curl.
-```pythoncurl http://127.0.0.1:5000/```
+```curl http://127.0.0.1:5000/```
 
 ### Required libraries:
 
