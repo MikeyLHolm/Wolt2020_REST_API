@@ -37,10 +37,12 @@ This API requires [Python3](https://realpython.com/installing-python/) to use.
 
 ### How to search?
 
-http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775
-q=
-lat=
-lon=
+Typical search would look something like:
+```http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775```
+Where
+* q=
+* lat=
+* lon=
 
 ### Required libraries:
 
