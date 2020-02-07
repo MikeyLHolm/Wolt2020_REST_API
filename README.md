@@ -11,22 +11,32 @@ https://github.com/woltapp/summer2020
 
 * I chose **Python** as I'm interested in *Machine learning* and *all things AI* where Python is greatly used and I had already planned on learning the language. 
 * Using Flask with Python I can create a development server to run the queries at.
-* One larger function (query_filter) passed into list comprehension as a condition filters query-matching restaurants into a new list which is returned as a file in repo root and as a .json type list to the web address.
+* One larger function (query_filter) passed into list comprehension as a condition filters query-matching restaurants into a new list which is returned.
 * Trying to improve user xp with various error messages and instructions.
 
 ## How to use?
 
 This API requires [Python3](https://realpython.com/installing-python/) to use.
 
+### Required libraries:
+
+* flask
+* geopy
+* json
+* jsonify
+* request
+
+To install a library: pip3 install libraryname
+
 ### Download:
 ```git clone https://github.com/MikeyLHolm/Wolt2020_REST_API.git```
 
-### Launch REST API in terminal:
+### Launch the REST API in the project folder in terminal:
 ```python3 rest_api.py```
 
 ### How to search?
 
-After launching the program in terminal you can use it in either a terminal or in a browser.
+After launching the program in terminal you can use it in either a terminal or in a browser. If you decide to use terminal open another window for the searches. Flask takes one window itself to run.
 
 #### Terminal
 Start by running:
@@ -41,19 +51,12 @@ Typical search in terminal would look something like:
 * lat: latitude coordinate
 * lon: longitude coordinate
 
+Remember to use: ```curl http://127.0.0.1:5000/restaurants/search?```
+
 #### Browser
 Typical search in a browser, above rules apply here also:
 
 http://127.0.0.1:5000/restaurants/search?q=sushi&lat=60.1775&lon=24.9695
-
-### Required libraries:
-
-To install a library: pip3 install libraryname
-* flask
-* geopy
-* json
-* jsonify
-* request
 
 ### Shutting down flask
 Terminal:
@@ -87,7 +90,7 @@ Your code should look something like:
 ![rest_api](/images/line22.png)
 ![data_parser](/images/line31.png)
 
-## What is REST API?
+## What is a REST API?
 
 >Let’s say you’re trying to find videos about Batman on Youtube. You open up Youtube, type “Batman” into a search field, hit enter, and you see a list of videos about Batman. A REST API works in a similar way. You search for something, and you get a list of results back from the service you’re requesting from.
 >
