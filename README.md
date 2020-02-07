@@ -11,37 +11,61 @@ https://github.com/woltapp/summer2020
 
 * I chose **Python** as I'm interested in *Machine learning* and *all things AI* where Python is greatly used and I had already planned on learning the language. 
 * Using Flask with Python I can create a development server to run the queries at.
-* One larger function (query_filter) passed into list comprehension as a condition filters query-matching restaurants into a new list which is returned as a file in repo root and as a .json type list to the web address.
+* One larger function (query_filter) passed into list comprehension as a condition filters query-matching restaurants into a new list which is returned.
 * Trying to improve user xp with various error messages and instructions.
 
 ## How to use?
 
 This API requires [Python3](https://realpython.com/installing-python/) to use.
 
-### Download:
-```git clone https://github.com/MikeyLHolm/Wolt2020_REST_API.git```
-
-### Open up a new prompt to test out the API using curl.
-```curl http://127.0.0.1:5000/```
-
-### How to search?
-
-Typical search would look something like:
-
-```http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775```
-
-* q: query string. Full or partial match for the string is searched from name, description and tags fields. A minimum length for the query string is one character.
-* lat: latitude coordinate
-* lon: longitude coordinate
-
 ### Required libraries:
 
-To install a library: pip3 install libraryname
 * flask
 * geopy
 * json
 * jsonify
 * request
+
+To install a library: pip3 install libraryname
+
+### Download:
+```git clone https://github.com/MikeyLHolm/Wolt2020_REST_API.git```
+
+### Launch the REST API in the project folder in terminal:
+```python3 rest_api.py```
+
+### How to search?
+
+After launching the program in terminal you can use it in either a terminal or in a browser. If you decide to use terminal open another window for the searches. Flask takes one window itself to run.
+
+#### Terminal
+Start by running:
+
+```curl http://127.0.0.1:5000```
+
+Typical search in terminal would look something like:
+
+```curl http://127.0.0.1:5000/restaurants/search?q=sushi&lat=60.1775&lon=24.9695```
+
+* q: query string. Full or partial match for the string is searched from name, description and tags fields. A minimum length for the query string is one character.
+* lat: latitude coordinate
+* lon: longitude coordinate
+
+Remember to use: ```curl http://127.0.0.1:5000/restaurants/search?```
+
+#### Browser
+Typical search in a browser, above rules apply here also:
+
+http://127.0.0.1:5000/restaurants/search?q=sushi&lat=60.1775&lon=24.9695
+
+### Shutting down flask
+Terminal:
+
+```curl http://127.0.0.1:5000/shutdown```
+
+Browser:
+
+http://127.0.0.1:5000/shutdown
 
 ### Want to get your results into a .json file?
 
@@ -66,7 +90,7 @@ Your code should look something like:
 ![rest_api](/images/line22.png)
 ![data_parser](/images/line31.png)
 
-## What is REST API?
+## What is a REST API?
 
 >Let’s say you’re trying to find videos about Batman on Youtube. You open up Youtube, type “Batman” into a search field, hit enter, and you see a list of videos about Batman. A REST API works in a similar way. You search for something, and you get a list of results back from the service you’re requesting from.
 >
