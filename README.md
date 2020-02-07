@@ -21,18 +21,30 @@ This API requires [Python3](https://realpython.com/installing-python/) to use.
 ### Download:
 ```git clone https://github.com/MikeyLHolm/Wolt2020_REST_API.git```
 
-### Open up a new prompt to test out the API using curl.
-```curl http://127.0.0.1:5000/```
+### Launch REST API in terminal:
+```python3 rest_api.py```
 
 ### How to search?
 
-Typical search would look something like:
+After launching the program in terminal you can use it in either a terminal or in a browser.
 
-```http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775```
+#### Terminal
+Start by running:
+
+```curl http://127.0.0.1:5000```
+
+Typical search in terminal would look something like:
+
+```curl http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775```
 
 * q: query string. Full or partial match for the string is searched from name, description and tags fields. A minimum length for the query string is one character.
 * lat: latitude coordinate
 * lon: longitude coordinate
+
+#### Browser
+Typical search in a browser, above rules apply here also:
+
+http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775
 
 ### Required libraries:
 
@@ -42,6 +54,15 @@ To install a library: pip3 install libraryname
 * json
 * jsonify
 * request
+
+### Shutting down flask
+Terminal:
+
+```curl http://127.0.0.1:5000/shutdown```
+
+Browser:
+
+http://127.0.0.1:5000/shutdown
 
 ### Want to get your results into a .json file?
 
