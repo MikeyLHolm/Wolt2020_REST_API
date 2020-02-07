@@ -38,7 +38,7 @@ To install a library: pip3 install libraryname
 
 After launching the program in terminal you can use it in either a terminal or in a browser. If you decide to use terminal open another window for the searches. Flask takes one window itself to run.
 
-#### _Terminal_
+#### Terminal
 Start by running:
 
 ```curl http://127.0.0.1:5000```
@@ -53,7 +53,7 @@ Typical search in terminal would look something like:
 
 Remember to use: ```curl http://127.0.0.1:5000/restaurants/search?```
 
-#### _Browser_
+#### Browser
 Typical search in a browser, above rules apply here also:
 
 http://127.0.0.1:5000/restaurants/search?q=sushi&lat=60.1775&lon=24.9695
