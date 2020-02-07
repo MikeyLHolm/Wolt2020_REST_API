@@ -1,5 +1,5 @@
 # What is this project?
-A REST API endpoint that allows searching restaurants.
+A REST API endpoint that searches .json for query-matching restaurants within 3km from the given location.
 Originally done for [Wolt's](https://wolt.com/) Summer 2020 Internship Engineering Backend Pre-assignment.
 
 API needs to accept three parameters (query string, latitude and longitude) and should return restaurant(s) (objects) which match the given query string and are closer than 3 kilometers from coordinates.
@@ -18,7 +18,7 @@ https://github.com/woltapp/summer2020
 
 This API requires [Python3](https://realpython.com/installing-python/) to use.
 
-### Required libraries:
+### Required libraries to run the API:
 
 * flask
 * geopy
@@ -38,7 +38,7 @@ To install a library: pip3 install libraryname
 
 After launching the program in terminal you can use it in either a terminal or in a browser. If you decide to use terminal open another window for the searches. Flask takes one window itself to run.
 
-#### Terminal
+#### __Terminal__
 Start by running:
 
 ```curl http://127.0.0.1:5000```
@@ -53,7 +53,7 @@ Typical search in terminal would look something like:
 
 Remember to use: ```curl http://127.0.0.1:5000/restaurants/search?```
 
-#### Browser
+#### __Browser__
 Typical search in a browser, above rules apply here also:
 
 http://127.0.0.1:5000/restaurants/search?q=sushi&lat=60.1775&lon=24.9695
