@@ -90,6 +90,12 @@ Your code should look something like:
 ![rest_api](/images/line22.png)
 ![data_parser](/images/line31.png)
 
+## Notes
+
+Tested and works on both iOS and Windows10. However there has been some problems with Windows and running Python3. If you are getting "Permission Denied" trying to run Python on Windows there is some workarounds. This might help:
+
+https://stackoverflow.com/questions/56974927/permission-denied-trying-to-run-python-on-windows-10
+
 ## What is a REST API?
 
 >Let’s say you’re trying to find videos about Batman on Youtube. You open up Youtube, type “Batman” into a search field, hit enter, and you see a list of videos about Batman. A REST API works in a similar way. You search for something, and you get a list of results back from the service you’re requesting from.
