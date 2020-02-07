@@ -35,7 +35,7 @@ Start by running:
 
 Typical search in terminal would look something like:
 
-```curl http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775```
+```curl http://127.0.0.1:5000/restaurants/search?q=sushi&lat=60.1775&lon=24.9695```
 
 * q: query string. Full or partial match for the string is searched from name, description and tags fields. A minimum length for the query string is one character.
 * lat: latitude coordinate
@@ -44,7 +44,7 @@ Typical search in terminal would look something like:
 #### Browser
 Typical search in a browser, above rules apply here also:
 
-http://127.0.0.1:5000/restaurants/search?q=sushi&lat=24.9695&lon=60.1775
+http://127.0.0.1:5000/restaurants/search?q=sushi&lat=60.1775&lon=24.9695
 
 ### Required libraries:
 
